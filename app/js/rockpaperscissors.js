@@ -26,6 +26,7 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
+    // OR statement that takes move otherwise takes getInput
     return move || getInput();
 }
 
@@ -33,6 +34,7 @@ function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
+    //OR statement that takes move other wise takes randomPlay
     return move || randomPlay()
 }
 
@@ -40,6 +42,8 @@ function getComputerMove(move) {
 // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
 // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
 /* YOUR CODE HERE */
+
+//Else if statements used to differentiate 'tie', player win and computer wins scenerios
 function getWinner(playerMove,computerMove) {
     var winner;
     if (playerMove === computerMove){
@@ -65,7 +69,7 @@ function getWinner(playerMove,computerMove) {
     }
     
     
-    
+    //return winner at end of function
     return winner;
 }
 
@@ -77,6 +81,7 @@ function playToFive() {
     var winner = getWinner(playerWins, computerWins);
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    //continue looping until either player or computer have more than 5 wins
     while (playerWins < 5 && computerWins < 5){
         var playerMove = getPlayerMove();
         var computerMove = getComputerMove();
@@ -93,7 +98,7 @@ function playToFive() {
             computerWins +=0;
         }
         
-        
+        //console.log comments for game
         console.log('The Player chose: ' + playerMove);
         console.log('The computer chose: ' + computerMove);
         console.log('The score is currently, PLayer: ' +playerWins + ', Comuter: ' +computerWins + '\n');}
